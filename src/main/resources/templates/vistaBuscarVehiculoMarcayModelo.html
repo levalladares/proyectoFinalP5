@@ -44,6 +44,22 @@
 		padding: 25px;
 		height: 100vh;
 	}
+	.btn-red {
+		background-color: red;
+		color: white;
+		border-color: red;
+		border-radius: 0;
+		/* Eliminar el borde redondeado */
+		box-shadow: none;
+		/* Eliminar cualquier sombra */
+		outline: none;
+		/* Eliminar el contorno al hacer clic */
+	}
+
+	.btn-red:hover {
+		background-color: darkred;
+		border-color: darkred;
+	}
 </style>
 
 <body class="p-3 mb-2 bg-dark text-white">
@@ -66,10 +82,7 @@
 				<th>Modelo</th>
 				<th>Marca</th>
 				<th>Año de Fabricacion</th>
-				<th>Pais de Fabricacion</th>
 				<th>Estado</th>
-				<th>Cilindraje</th>
-				<th>Evaluo</th>
 				<th>Valor por Dia</th>
 
 
@@ -82,10 +95,7 @@
 				<td th:text="${vehiculo.modelo}"></td>
 				<td th:text="${vehiculo.marca}"></td>
 				<td th:text="${vehiculo.anioF}"></td>
-				<td th:text="${vehiculo.paisF}"></td>
 				<td th:text="${vehiculo.estado}"></td>
-				<td th:text="${vehiculo.cilindraje}"></td>
-				<td th:text="${vehiculo.evaluo}"></td>
 				<td th:text="${vehiculo.valorPorDia}"></td>
 
 				<!-- Agrega más celdas según los datos que deseas mostrar -->
@@ -97,7 +107,7 @@
 		<div style="text-align:center;">
 			<p></p>
 			<p></p>
-			<input class="btn btn-black" type="submit" value="REGRESAR">
+			<input class="btn btn-red" type="submit" value="REGRESAR">
 		</div>
 
 

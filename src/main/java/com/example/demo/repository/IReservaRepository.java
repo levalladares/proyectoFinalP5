@@ -8,32 +8,32 @@ import com.example.demo.repository.modelo.Reserva;
 public interface IReservaRepository {
 
 	public void insertar(Reserva reserva);
-	
-	//actualizar estado
+
+	// actualizar estado
 	public void actualizar(Reserva reserva);
+
 	public Reserva encontrar(Integer id);
+
 	public void eliminar(Integer id);
 
 	public List<Reserva> encontrarTodasReserva();
-	//buscar la reserva normal
+
+	// buscar la reserva normal
 	public Reserva buscar(String numeroReserva);
 
-	//Buscar La reserva por numerodeReserva
+	// Buscar La reserva por numerodeReserva
 	public Reserva encontrarPorNumero(String numeroReserva);
 
-	//Actualizar el estado de la reserva
+	// Actualizar el estado de la reserva
 	public Integer actEstado(String numeroReserva);
-	
-	//buscar por numero reserva List
+
+	// buscar por numero reserva List
 	public List<Reserva> buscarList(String numeroReserva);
-	//consulta de reservas por fechas
-	public List<Reserva> encontrarRangoFecha(LocalDateTime inicio,LocalDateTime fin);
-	
-//	//Consultar valores vip
-//	public List<Reserva> encontrarClientesVip();
-	
-	//buscar reserva por placa
+
+	// consulta de reservas por fechas
+	public List<Reserva> encontrarRangoFecha(LocalDateTime inicio, LocalDateTime fin);
+
+	// buscar reserva por placa
 	public List<Reserva> encontrarReportePlaca(String placa);
-	
-	
+
 }

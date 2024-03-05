@@ -15,7 +15,7 @@ import jakarta.transaction.Transactional;
 @Repository
 @Transactional
 
-public class VehiculoRepositoryImpl implements IVehiculoRepository{
+public class VehiculoRepositoryImpl implements IVehiculoRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -37,14 +37,14 @@ public class VehiculoRepositoryImpl implements IVehiculoRepository{
 
 	@Override
 	public void eliminar(Integer id) {
-		Vehiculo vehiculo= this.encontrar(id);
+		Vehiculo vehiculo = this.encontrar(id);
 		this.entityManager.remove(vehiculo);
 	}
 
 	@Override
 	public List<Vehiculo> encontrarVehiDisponibles() {
 
-		Query query=this.entityManager.createQuery("SELECT v FROM Vehiculo v WHERE v.estado =: datoEstado");
+		Query query = this.entityManager.createQuery("SELECT v FROM Vehiculo v WHERE v.estado =: datoEstado");
 		query.setParameter("datoEstado", "D");
 		return query.getResultList();
 
@@ -53,14 +53,15 @@ public class VehiculoRepositoryImpl implements IVehiculoRepository{
 	@Override
 	public List<Vehiculo> encontrarTodosVehi() {
 
-		Query query =this.entityManager.createQuery("SELECT v FROM Vehiculo v");
+		Query query = this.entityManager.createQuery("SELECT v FROM Vehiculo v");
 		return query.getResultList();
 
 	}
 
 	@Override
 	public List<Vehiculo> encontrarMarcaModelo(String marca, String modelo) {
-		TypedQuery<Vehiculo> query =this.entityManager.createQuery("SELECT v FROM Vehiculo v WHERE v.marca = :datoMarca AND v.modelo =: datoModelo",Vehiculo.class);
+		TypedQuery<Vehiculo> query = this.entityManager.createQuery(
+				"SELECT v FROM Vehiculo v WHERE v.marca = :datoMarca AND v.modelo =: datoModelo", Vehiculo.class);
 		query.setParameter("datoMarca", marca);
 		query.setParameter("datoModelo", modelo);
 		return query.getResultList();
@@ -69,9 +70,9 @@ public class VehiculoRepositoryImpl implements IVehiculoRepository{
 	@Override
 	public Vehiculo encontrarPlaca(String placa) {
 
-		TypedQuery<Vehiculo>query=this.entityManager.createQuery("SELECT v FROM Vehiculo v WHERE v.placa = :datoPlaca",Vehiculo.class);
+		TypedQuery<Vehiculo> query = this.entityManager
+				.createQuery("SELECT v FROM Vehiculo v WHERE v.placa = :datoPlaca", Vehiculo.class);
 		query.setParameter("datoPlaca", placa);
-
 
 		return query.getSingleResult();
 	}
@@ -79,7 +80,8 @@ public class VehiculoRepositoryImpl implements IVehiculoRepository{
 	@Override
 	public Integer actEstado(String placa) {
 
-		Query query=this.entityManager.createNativeQuery("UPDATE vehiculo SET vehi_estado = 'I' WHERE vehi_placa =:datoPlaca",Vehiculo.class);
+		Query query = this.entityManager.createNativeQuery(
+				"UPDATE vehiculo SET vehi_estado = 'I' WHERE vehi_placa =:datoPlaca", Vehiculo.class);
 		query.setParameter("datoPlaca", placa);
 		return query.executeUpdate();
 
@@ -88,29 +90,20 @@ public class VehiculoRepositoryImpl implements IVehiculoRepository{
 	@Override
 	public List<Vehiculo> encontrarPlacaList(String placa) {
 
-		TypedQuery<Vehiculo>query=this.entityManager.createQuery("SELECT v FROM Vehiculo v WHERE v.placa = :datoPlaca",Vehiculo.class);
+		TypedQuery<Vehiculo> query = this.entityManager
+				.createQuery("SELECT v FROM Vehiculo v WHERE v.placa = :datoPlaca", Vehiculo.class);
 		query.setParameter("datoPlaca", placa);
-
 
 		return query.getResultList();
 	}
 
-//	@Override
-//	public List<Vehiculo> encontrarVehiculoVip(String fecha) {
-//		String jpql="SELECT v FROM Vehiculo v JOIN v.reserva r WHERE concat(r.inicio, '') LIKE :datoFecha AND concat(r.fin, '') LIKE :datoFecha";
-//		TypedQuery<Vehiculo>query=this.entityManager.createQuery(jpql,Vehiculo.class);
-//		query.setParameter("datoFecha", fecha);
-//		return query.getResultList();
-//	}
-
 	@Override
 	public List<Vehiculo> encontrarMarcayModeloList(String marca, String modelo) {
-		String jpql="SELECT v FROM Vehiculo v WHERE v.marca = :datoMarca AND v.modelo =: datoModelo";
-		TypedQuery<Vehiculo>query=this.entityManager.createQuery(jpql,Vehiculo.class);
+		String jpql = "SELECT v FROM Vehiculo v WHERE v.marca = :datoMarca AND v.modelo =: datoModelo";
+		TypedQuery<Vehiculo> query = this.entityManager.createQuery(jpql, Vehiculo.class);
 		query.setParameter("datoMarca", marca);
 		query.setParameter("datoModelo", modelo);
 		return query.getResultList();
 	}
-	
-	
+
 }

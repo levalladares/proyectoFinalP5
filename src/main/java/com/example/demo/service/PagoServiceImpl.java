@@ -10,24 +10,21 @@ import com.example.demo.repository.modelo.Pago;
 import com.example.demo.repository.modelo.Reserva;
 
 @Service
-public class PagoServiceImpl implements IPagoService{
-
+public class PagoServiceImpl implements IPagoService {
 
 	@Autowired
 	private IPagoRepository iPagoRepo;
 
 	@Override
-	public void realizarPago(String numTarjeta,Reserva reserva) {
+	public void realizarPago(String numTarjeta, Reserva reserva) {
 		// TODO Auto-generated method stub
-		Pago pago= new Pago();
+		Pago pago = new Pago();
 		pago.setFecha(LocalDate.now());
 		pago.setNumTarjeta(numTarjeta);
 		pago.setReserva(reserva);
 
 		this.iPagoRepo.insertar(pago);
 
-
-
 	}
-	
+
 }

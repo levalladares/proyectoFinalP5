@@ -28,7 +28,4 @@ public interface IVehiculoService {
 	// encontrar por placa y modelo
 	public List<Vehiculo> buscarMarcayModeloList(String placa, String modelo);
 
-//	// encontrar vehiculo vip
-//	public List<Vehiculo> buscarVehiculoVip(String fecha);
-
 }

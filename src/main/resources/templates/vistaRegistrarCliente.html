@@ -41,6 +41,22 @@
 		background-color: #555;
 		border-color: #333;
 	}
+	.btn-red {
+		background-color: red;
+		color: white;
+		border-color: red;
+		border-radius: 0;
+		/* Eliminar el borde redondeado */
+		box-shadow: none;
+		/* Eliminar cualquier sombra */
+		outline: none;
+		/* Eliminar el contorno al hacer clic */
+	}
+
+	.btn-red:hover {
+		background-color: darkred;
+		border-color: darkred;
+	}
 </style>
 
 
@@ -114,7 +130,7 @@
 		<div style="text-align:center;">
 			<p></p>
 			<p></p>
-			<input class="btn btn-black" type="submit" value="REGRESAR">
+			<input class="btn btn-red" type="submit" value="REGRESAR">
 		</div>
 
 

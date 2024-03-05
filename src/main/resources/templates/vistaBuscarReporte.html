@@ -11,56 +11,90 @@
 </head>
 
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    background-image: url('https://fondosmil.com/fondo/17550.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el espacio */
-    background-position: center center; /* Centra la imagen en el cuerpo */
-    color: #FFFFFF;
-    padding: 25px;
-    height: 100vh;
-  }
+	.btn-black {
+		background-color: black;
+		color: white;
+		border-color: black;
+		border-radius: 0;
+		/* Eliminar el borde redondeado */
+		box-shadow: none;
+		/* Eliminar cualquier sombra */
+		outline: none;
+		/* Eliminar el contorno al hacer clic */
+	}
+
+	.btn-black:hover {
+		background-color: #555;
+		border-color: #333;
+	}
+
+	.center {
+		text-align: center;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		background-image: url('https://p4.wallpaperbetter.com/wallpaper/483/1008/958/background-cars-drawings-white-wallpaper-preview.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		/* Ajusta el tamaño de la imagen para cubrir todo el espacio */
+		background-position: center center;
+		/* Centra la imagen en el cuerpo */
+		color: #FFFFFF;
+		padding: 25px;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.btn-red {
+		background-color: red;
+		color: white;
+		border-color: red;
+		border-radius: 0;
+		/* Eliminar el borde redondeado */
+		box-shadow: none;
+		/* Eliminar cualquier sombra */
+		outline: none;
+		/* Eliminar el contorno al hacer clic */
+	}
+
+	.btn-red:hover {
+		background-color: darkred;
+		border-color: darkred;
+	}
 </style>
 
-
-<body class="p-3 mb-2 bg-light text-dark">
+<body>
+	<h2 class="center" style="color: black;">REPORTE DE RESERVA</h2>
 	<form action="#" th:action=@{/reportes/consultarRangoFechas} th:object="${reporteDto}" th:method="GET">
-		<table class="table table-bordered border-primary">
-			<thead>
-				<th class="text-center">Reporte de Reservas</th>
-			</thead>
+		<table>
 			<tbody>
 				<tr>
-					<td class="text-center"><label> Fecha de Inicio </label> </td>
-					<td><input class="border border-info border-2" type="datetime-local" id="fini"
-							th:field=${reporteDto.inicio}></td>
+					<td class="text-center"><label class="btn btn-black"> Fecha de Inicio </label> </td>
+					<td><input class="btn btn-black" type="datetime-local" id="fini" th:field=${reporteDto.inicio}></td>
 				</tr>
 				<tr>
-					<td class="text-center"><label> Fecha de Fin </label> </td>
-					<td><input class="border border-info border-2" type="datetime-local" id="ffin"
-							th:field=${reporteDto.fin}></td>
+					<td class="text-center"><label class="btn btn-black"> Fecha de Fin </label></td>
+					<td><input class="btn btn-black" type="datetime-local" id="ffin" th:field=${reporteDto.fin}></td>
 				</tr>
 			</tbody>
+			<p></p>
+			<p></p>
 		</table>
+		<p></p>
+		<p></p>
 		<div style="text-align:center;">
-		<div class="border border-info">
-			
-			<input type="submit" value="Buscar">
+			<input class="btn btn-black" type="submit" value="Buscar">
 		</div>
 	</form>
-	<form th:action="@{/reportes/opciones}">
-			<div style="text-align:center;">
-				<p></p>
-				<p></p>
-				<p></p>
-				<p></p>
-				<input class="border border-info" type="submit" value="REGRESAR">
-			</div>
-		</form>
-	
-
+	<form th:action="@{/reportes/opciones}" style="text-align:center;">
+		<p></p>
+		<p></p>
+		<input class="btn btn-red" type="submit" value="REGRESAR">
+	</form>
 </body>
 
 </html>

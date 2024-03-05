@@ -1,22 +1,15 @@
 package com.example.demo.service;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.repository.IVehiculoRepository;
-import com.example.demo.repository.modelo.Reserva;
 import com.example.demo.repository.modelo.Vehiculo;
 
-
 @Service
-public class VehiculoServiceImpl implements IVehiculoService{
-
+public class VehiculoServiceImpl implements IVehiculoService {
 
 	@Autowired
 	private IVehiculoRepository iVehiculoRepo;
@@ -60,8 +53,7 @@ public class VehiculoServiceImpl implements IVehiculoService{
 	@Override
 	public List<Vehiculo> buscarMarcaModelo(String marca, String modelo) {
 		// TODO Auto-generated method stub
-		return this.iVehiculoRepo.encontrarMarcaModelo(marca, modelo)
-				;
+		return this.iVehiculoRepo.encontrarMarcaModelo(marca, modelo);
 	}
 
 	@Override
@@ -74,12 +66,6 @@ public class VehiculoServiceImpl implements IVehiculoService{
 		// TODO Auto-generated method stub
 		return this.iVehiculoRepo.encontrarPlacaList(placa);
 	}
-
-//	@Override
-//	public List<Vehiculo> buscarVehiculoVip(String fecha) {
-//		// TODO Auto-generated method stub
-//		return this.iVehiculoRepo.encontrarVehiculoVip(fecha);
-//	}
 
 	@Override
 	public List<Vehiculo> buscarMarcayModeloList(String placa, String modelo) {

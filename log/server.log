@@ -535,3 +535,17 @@
 2024-03-03 18:47:40 INFO  MenuControler:19 - botones
 2024-03-03 18:47:42 INFO  ReporteController:38 - opciones
 2024-03-03 18:47:49 INFO  ReporteController:38 - opciones
+2024-03-04 17:36:35 INFO  ReporteController:36 - opciones
+2024-03-04 17:36:37 INFO  MenuControler:19 - botones
+2024-03-04 17:36:40 INFO  ClienteController:45 - opciones
+2024-03-04 17:36:41 INFO  ClienteController:99 - registrarReserva
+2024-03-04 17:36:43 INFO  ClienteController:45 - opciones
+2024-03-04 17:36:44 INFO  ClienteController:85 - busquedaMarcayModelo
+2024-03-04 17:36:49 INFO  ClienteController:85 - busquedaMarcayModelo
+2024-03-04 17:36:59 INFO  ClienteController:45 - opciones
+2024-03-04 17:37:00 INFO  MenuControler:19 - botones
+2024-03-04 17:37:02 INFO  EmpleadoController:44 - opciones
+2024-03-04 17:39:12 INFO  EmpleadoController:44 - opciones
+2024-03-04 17:39:22 INFO  MenuControler:19 - botones
+2024-03-04 17:39:24 INFO  EmpleadoController:44 - opciones
+2024-03-04 17:40:59 INFO  EmpleadoController:44 - opciones

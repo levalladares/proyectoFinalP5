@@ -15,16 +15,11 @@ import jakarta.transaction.Transactional;
 @Repository
 @Transactional
 
-public class ClienteRepositoryImpl implements IClienteRepository{
-
+public class ClienteRepositoryImpl implements IClienteRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	
-
-	
-	
 	@Override
 	public void insertar(Cliente cliente) {
 		// TODO Auto-generated method stub
@@ -46,32 +41,33 @@ public class ClienteRepositoryImpl implements IClienteRepository{
 	@Override
 	public void eliminar(Integer id) {
 		// TODO Auto-generated method stub
-		Cliente cliente= this.buscar(id);
+		Cliente cliente = this.buscar(id);
 		this.entityManager.remove(cliente);
 
 	}
 
 	@Override
 	public Cliente encontrarPorCedula(String cedula) {
-	TypedQuery<Cliente> query=this.entityManager.createQuery("SELECT e FROM Cliente e WHERE e.cedula = :datoCedula",Cliente.class);
-	query.setParameter("datoCedula", cedula);
-	return query.getSingleResult();
+		TypedQuery<Cliente> query = this.entityManager
+				.createQuery("SELECT e FROM Cliente e WHERE e.cedula = :datoCedula", Cliente.class);
+		query.setParameter("datoCedula", cedula);
+		return query.getSingleResult();
 
 	}
-	
+
 	@Override
 	public List<Cliente> encontrarPorCedulaList(String cedula) {
-	TypedQuery<Cliente> query=this.entityManager.createQuery("SELECT e FROM Cliente e WHERE e.cedula = :datoCedula",Cliente.class);
-	query.setParameter("datoCedula", cedula);
-	return query.getResultList();
+		TypedQuery<Cliente> query = this.entityManager
+				.createQuery("SELECT e FROM Cliente e WHERE e.cedula = :datoCedula", Cliente.class);
+		query.setParameter("datoCedula", cedula);
+		return query.getResultList();
 
 	}
 
 	@Override
 	public List<Cliente> encontrarTodos() {
-	Query query=this.entityManager.createQuery("SELECT c FROM Cliente c",Cliente.class);
-	return query.getResultList();
+		Query query = this.entityManager.createQuery("SELECT c FROM Cliente c", Cliente.class);
+		return query.getResultList();
 	}
-	
-	
+
 }

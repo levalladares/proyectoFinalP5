@@ -2,7 +2,6 @@ package com.example.demo.repository.modelo.dto;
 
 public class VehiculoDto {
 
-	
 	private String placa;
 	private String modelo;
 	private String marca;
@@ -12,6 +11,7 @@ public class VehiculoDto {
 	private String cilindraje;
 	private String evaluo;
 	private String valorPorDia;
+
 	public VehiculoDto(String placa, String modelo, String marca, String anioF, String paisF, String estado,
 			String cilindraje, String evaluo, String valorPorDia) {
 		super();
@@ -25,9 +25,9 @@ public class VehiculoDto {
 		this.evaluo = evaluo;
 		this.valorPorDia = valorPorDia;
 	}
-	
+
 	public VehiculoDto() {
-		
+
 	}
 
 	@Override
@@ -108,7 +108,5 @@ public class VehiculoDto {
 	public void setValorPorDia(String valorPorDia) {
 		this.valorPorDia = valorPorDia;
 	}
-	
-	
-	
+
 }

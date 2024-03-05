@@ -15,7 +15,7 @@
   body {
     margin: 0;
     padding: 0;
-    background-image: url('https://img.freepik.com/vector-gratis/fondo-geometrico-abstracto-estructura-metalica_52683-59421.jpg?w=2000');
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/483/1008/958/background-cars-drawings-white-wallpaper-preview.jpg');
     background-repeat: no-repeat;
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el espacio */
     background-position: center center; /* Centra la imagen en el cuerpo */
@@ -23,10 +23,26 @@
     padding: 25px;
     height: 100vh;
   }
+  .btn-red {
+		background-color: red;
+		color: white;
+		border-color: red;
+		border-radius: 0;
+		/* Eliminar el borde redondeado */
+		box-shadow: none;
+		/* Eliminar cualquier sombra */
+		outline: none;
+		/* Eliminar el contorno al hacer clic */
+	}
+
+	.btn-red:hover {
+		background-color: darkred;
+		border-color: darkred;
+	}
 </style>
 
 <body class="p-3 mb-2 bg-light text-dark">
-	<table class="table table-bordered border-primary">
+	<table  class="table table-dark table-striped">
 		<thead>
 			<tr>
 				<th class="text-center">Numero de Reserva</th>
@@ -67,7 +83,7 @@
 				<p></p>
 				<p></p>
 				<p></p>
-				<input class="border border-info" type="submit" value="REGRESAR">
+				<input class="btn btn-red" type="submit" value="REGRESAR">
 			</div>
 		</form>
 

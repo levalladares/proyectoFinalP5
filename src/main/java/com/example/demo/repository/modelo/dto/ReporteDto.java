@@ -1,8 +1,7 @@
 package com.example.demo.repository.modelo.dto;
 
-
 public class ReporteDto {
-	
+
 	private String numero;
 	private String estado;
 	private String inicio;
@@ -10,6 +9,7 @@ public class ReporteDto {
 	private String subtotal;
 	private String ice;
 	private String total;
+
 	public ReporteDto(String numero, String estado, String inicio, String fin, String subtotal, String ice,
 			String total) {
 		super();
@@ -21,9 +21,9 @@ public class ReporteDto {
 		this.ice = ice;
 		this.total = total;
 	}
-	
+
 	public ReporteDto() {
-		
+
 	}
 
 	@Override
@@ -87,8 +87,5 @@ public class ReporteDto {
 	public void setTotal(String total) {
 		this.total = total;
 	}
-	
-	
-	
 
 }

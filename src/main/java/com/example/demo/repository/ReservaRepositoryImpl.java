@@ -3,7 +3,6 @@ package com.example.demo.repository;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.repository.modelo.Reserva;
@@ -17,7 +16,7 @@ import jakarta.transaction.Transactional;
 @Repository
 @Transactional
 
-public class ReservaRepositoryImpl implements IReservaRepository{
+public class ReservaRepositoryImpl implements IReservaRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -96,8 +95,7 @@ public class ReservaRepositoryImpl implements IReservaRepository{
 
 	@Override
 	public List<Reserva> buscarList(String numeroReserva) {
-		
-		
+
 		Query query = this.entityManager.createNativeQuery("SELECT * FROM reserva WHERE rese_numero = :datoNumero",
 				Reserva.class);
 		query.setParameter("datoNumero", numeroReserva);
@@ -106,50 +104,34 @@ public class ReservaRepositoryImpl implements IReservaRepository{
 		} catch (Exception e) {
 			return (List<Reserva>) query.getResultList().get(0);
 		}
-		
+
 	}
 
 	@Override
 	public List<Reserva> encontrarRangoFecha(LocalDateTime inicio, LocalDateTime fin) {
-	
-		String jpql="SELECT r FROM Reserva r WHERE r.inicio>= :datoInicio AND r.fin<= :datoFin";
-		TypedQuery<Reserva> query=this.entityManager.createQuery(jpql,Reserva.class);
-		
+
+		String jpql = "SELECT r FROM Reserva r WHERE r.inicio>= :datoInicio AND r.fin<= :datoFin";
+		TypedQuery<Reserva> query = this.entityManager.createQuery(jpql, Reserva.class);
+
 		query.setParameter("datoInicio", inicio);
 		query.setParameter("datoFin", fin);
-		List<Reserva> reservas =query.getResultList();
+		List<Reserva> reservas = query.getResultList();
 		for (Reserva reserva : reservas) {
 			reserva.getVehiculo().getEstado();
 			reserva.getCliente().getFechaNacimiento();
 		}
 		return reservas;
-		
-		
-		
-	}
 
-//	@Override
-//	public List<Reserva> encontrarClientesVip() {
-//	String jpql="SELECT r FROM Reserva r JOIN r.cliente c ORDER BY r.total DESC";
-//		TypedQuery<Reserva>query=this.entityManager.createQuery(jpql,Reserva.class);
-//		
-//		List<Reserva>reservas= query.getResultList();
-//		reservas.forEach(a->a.getCliente().getCedula());
-//		//revisar este error la pagina web se cae
-//		// reservas.parallelStream().forEach(a->a.getCliente().getCedula());
-//		return reservas;
-//		
-//	}
+	}
 
 	@Override
 	public List<Reserva> encontrarReportePlaca(String placa) {
-		
-		String jpql="select r from Reserva r join fetch r.vehiculo v where v.placa= :datoPlaca";
-		TypedQuery<Reserva>query=this.entityManager.createQuery(jpql,Reserva.class);
+
+		String jpql = "select r from Reserva r join fetch r.vehiculo v where v.placa= :datoPlaca";
+		TypedQuery<Reserva> query = this.entityManager.createQuery(jpql, Reserva.class);
 		query.setParameter("datoPlaca", placa);
-		
+
 		return query.getResultList();
 	}
 
-	
 }

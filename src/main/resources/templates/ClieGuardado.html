@@ -15,7 +15,7 @@
   body {
     margin: 0;
     padding: 0;
-    background-image: url('https://fondosmil.com/fondo/35285.jpg');
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/483/1008/958/background-cars-drawings-white-wallpaper-preview.jpg');
     background-repeat: no-repeat;
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el espacio */
     background-position: center center; /* Centra la imagen en el cuerpo */
@@ -23,16 +23,32 @@
     padding: 25px;
     height: 100vh;
   }
+  .btn-red {
+		background-color: red;
+		color: white;
+		border-color: red;
+		border-radius: 0;
+		/* Eliminar el borde redondeado */
+		box-shadow: none;
+		/* Eliminar cualquier sombra */
+		outline: none;
+		/* Eliminar el contorno al hacer clic */
+	}
+
+	.btn-red:hover {
+		background-color: darkred;
+		border-color: darkred;
+	}
 </style>
 
 <body class="p-3 mb-2 bg-dark text-white" ;>   
-	<p class="text-decoration-underline">Cliente Guardado</p>
+	<p style="color: black;" class="text-decoration-underline">Cliente Guardado</p>
 	
 	<p></p>
 	<div class="h4 pb-2 mb-4 text-danger border-bottom border-danger">
 	
 	<form th:action="@{/menu/botones}">
-		<div style="text-align:left;"><input class="btn btn-outline-primary" type="submit" value="INICIO"></div>    
+		<div style="text-align:left;"><input class="btn btn-red" type="submit" value="INICIO"></div>    
 	</form>
 </body> 
 

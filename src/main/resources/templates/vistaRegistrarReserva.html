@@ -61,6 +61,23 @@
 			padding: 25px;
 			height: 100vh;
 		}
+
+		.btn-red {
+			background-color: red;
+			color: white;
+			border-color: red;
+			border-radius: 0;
+			/* Eliminar el borde redondeado */
+			box-shadow: none;
+			/* Eliminar cualquier sombra */
+			outline: none;
+			/* Eliminar el contorno al hacer clic */
+		}
+
+		.btn-red:hover {
+			background-color: darkred;
+			border-color: darkred;
+		}
 	</style>
 
 
@@ -69,7 +86,7 @@
 	<p></p>
 	<p></p>
 
-	<div th:if="${mensajeError}" class="error-message">
+	<div style="color: black;" th:if="${mensajeError}" class="error-message">
 		<p th:text="${mensajeError}"></p>
 	</div>
 
@@ -109,9 +126,9 @@
 	<p></p>
 	<p></p>
 
-	<form  th:action="@{/clientes/opciones}">
+	<form th:action="@{/clientes/opciones}">
 		<div style="text-align:center;">
-			<input class="btn btn-black" "center" type="submit" value="REGRESAR">
+			<input class="btn btn-red" "center" type="submit" value="REGRESAR">
 		</div>
 	</form>
 

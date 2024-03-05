@@ -9,16 +9,15 @@ import com.example.demo.repository.IClienteRepository;
 import com.example.demo.repository.modelo.Cliente;
 
 @Service
-public class ClienteServiceImpl implements IClienteService{
+public class ClienteServiceImpl implements IClienteService {
 
-	
 	@Autowired
 	private IClienteRepository clienteRepo;
 
 	@Override
-	public void registrarC( Cliente cliente) {
+	public void registrarC(Cliente cliente) {
 		// TODO Auto-generated method stub
-		
+
 		this.clienteRepo.insertar(cliente);
 	}
 
@@ -57,5 +56,5 @@ public class ClienteServiceImpl implements IClienteService{
 		// TODO Auto-generated method stub
 		return this.clienteRepo.encontrarTodos();
 	}
-	
+
 }

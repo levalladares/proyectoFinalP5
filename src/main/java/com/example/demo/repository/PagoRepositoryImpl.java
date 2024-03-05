@@ -11,7 +11,7 @@ import jakarta.transaction.Transactional;
 @Repository
 @Transactional
 
-public class PagoRepositoryImpl implements IPagoRepository{
+public class PagoRepositoryImpl implements IPagoRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -21,5 +21,5 @@ public class PagoRepositoryImpl implements IPagoRepository{
 		// TODO Auto-generated method stub
 		this.entityManager.persist(pago);
 	}
-	
+
 }

@@ -7,8 +7,6 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +21,6 @@ import com.example.demo.repository.modelo.dto.ReporteVehiculoDto;
 @Service
 
 public class ReservaServiceImpl implements IReservaService {
-
-	private static final Logger LOG = LoggerFactory.getLogger(ReservaServiceImpl.class);
 
 	@Autowired
 	private IReservaRepository iReservaRepo;
@@ -77,7 +73,6 @@ public class ReservaServiceImpl implements IReservaService {
 				Integer n = 100;
 				Integer numero = (int) (Math.random() * n) + 1;
 				reserva.setNumero(numero.toString());
-				LOG.info("Costo total : " + totalPrecio);
 				this.iReservaRepo.insertar(reserva);
 
 				this.iPagoService.realizarPago(numeroTarjeta, reserva);
@@ -193,7 +188,7 @@ public class ReservaServiceImpl implements IReservaService {
 				Integer n = 100;
 				Integer numero = (int) (Math.random() * n) + 1;
 				reserva.setNumero(numero.toString());
-				LOG.info("Costo total : " + totalPrecio);
+
 				this.iReservaRepo.insertar(reserva);
 
 				this.iPagoService.realizarPago(numeroTarjeta, reserva);
@@ -237,12 +232,6 @@ public class ReservaServiceImpl implements IReservaService {
 		// TODO Auto-generated method stub
 		return this.iReservaRepo.encontrarRangoFecha(inicio, fin);
 	}
-
-//	@Override
-//	public List<Reserva> buscarClientesVip() {
-//		// TODO Auto-generated method stub
-//		return this.iReservaRepo.encontrarClientesVip();
-//	}
 
 	@Override
 	public List<ReporteVehiculoDto> ReporteEncontrarVehi(List<Vehiculo> vehiculos) {

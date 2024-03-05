@@ -1,7 +1,6 @@
 package com.example.demo.repository.modelo;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.CascadeType;
@@ -22,7 +21,6 @@ import jakarta.persistence.Table;
 
 public class Reserva {
 
-	
 	@Id
 	@SequenceGenerator(name = "seq_rese", sequenceName = "seq_rese", allocationSize = 1)
 	@GeneratedValue(generator = "seq_rese", strategy = GenerationType.SEQUENCE)
@@ -44,8 +42,7 @@ public class Reserva {
 	@Column(name = "rese_total")
 	private BigDecimal total;
 
-
-	//relacion
+	// relacion
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "rese_id_cliente")
 	private Cliente cliente;
@@ -53,9 +50,8 @@ public class Reserva {
 	@JoinColumn(name = "rese_id_vehiculo")
 	private Vehiculo vehiculo;
 
-	@OneToOne(mappedBy = "reserva",cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)
+	@OneToOne(mappedBy = "reserva", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
 	private Pago pago;
-
 
 	@Override
 	public String toString() {
@@ -63,118 +59,92 @@ public class Reserva {
 				+ ", subtotal=" + subtotal + ", ice=" + ice + ", total=" + total + "]";
 	}
 
-
 	public Integer getId() {
 		return id;
 	}
-
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-
 	public String getNumero() {
 		return numero;
 	}
-
 
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
-
 	public String getEstado() {
 		return estado;
 	}
-
 
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
-
-
-
 	public LocalDateTime getInicio() {
 		return inicio;
 	}
-
 
 	public void setInicio(LocalDateTime inicio) {
 		this.inicio = inicio;
 	}
 
-
 	public LocalDateTime getFin() {
 		return fin;
 	}
-
 
 	public void setFin(LocalDateTime fin) {
 		this.fin = fin;
 	}
 
-
 	public BigDecimal getSubtotal() {
 		return subtotal;
 	}
-
 
 	public void setSubtotal(BigDecimal subtotal) {
 		this.subtotal = subtotal;
 	}
 
-
-
-
 	public BigDecimal getIce() {
 		return ice;
 	}
-
 
 	public void setIce(BigDecimal ice) {
 		this.ice = ice;
 	}
 
-
 	public BigDecimal getTotal() {
 		return total;
 	}
-
 
 	public void setTotal(BigDecimal total) {
 		this.total = total;
 	}
 
-
 	public Cliente getCliente() {
 		return cliente;
 	}
-
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 
-
 	public Vehiculo getVehiculo() {
 		return vehiculo;
 	}
-
 
 	public void setVehiculo(Vehiculo vehiculo) {
 		this.vehiculo = vehiculo;
 	}
 
-
 	public Pago getPago() {
 		return pago;
 	}
 
-
 	public void setPago(Pago pago) {
 		this.pago = pago;
 	}
-	
+
 }

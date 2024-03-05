@@ -1,6 +1,5 @@
 package com.example.demo.repository.modelo;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 

@@ -35,7 +35,4 @@ public interface IVehiculoRepository {
 	// actualizar el estadopor placa
 	public Integer actEstado(String placa);
 
-//	// buscar vehiculo vip por año y mes
-//	public List<Vehiculo> encontrarVehiculoVip(String fecha);
-
 }

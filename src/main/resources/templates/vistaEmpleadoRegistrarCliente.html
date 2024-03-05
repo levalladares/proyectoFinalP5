@@ -14,7 +14,7 @@
   body {
     margin: 0;
     padding: 0;
-    background-image: url('https://i.pinimg.com/originals/77/42/0d/77420df3f9e33db5b79ee25455d3340e.png');
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/483/1008/958/background-cars-drawings-white-wallpaper-preview.jpg');
     background-repeat: no-repeat;
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el espacio */
     background-position: center center; /* Centra la imagen en el cuerpo */
@@ -22,6 +22,38 @@
     padding: 25px;
     height: 100vh;
   }
+  .btn-black {
+		background-color: black;
+		color: white;
+		border-color: black;
+		border-radius: 0;
+		/* Eliminar el borde redondeado */
+		box-shadow: none;
+		/* Eliminar cualquier sombra */
+		outline: none;
+		/* Eliminar el contorno al hacer clic */
+	}
+
+	.btn-black:hover {
+		background-color: #555;
+		border-color: #333;
+	}
+	.btn-red {
+		background-color: red;
+		color: white;
+		border-color: red;
+		border-radius: 0;
+		/* Eliminar el borde redondeado */
+		box-shadow: none;
+		/* Eliminar cualquier sombra */
+		outline: none;
+		/* Eliminar el contorno al hacer clic */
+	}
+
+	.btn-red:hover {
+		background-color: darkred;
+		border-color: darkred;
+	}
 </style>
 
 
@@ -32,7 +64,7 @@
 		<table style="margin: 0 auto;">
 			<tr>
 				<td>
-					<label class="border border-success p-2 mb-2">CEDULA:</label>
+					<label class="btn btn-black">CEDULA:</label>
 
 				</td>
 				<td>
@@ -41,7 +73,7 @@
 			</tr>
 			<tr>
 				<td>
-					<label class="border border-success p-2 mb-2">NOMBRE:</label>
+					<label class="btn btn-black">NOMBRE:</label>
 
 				</td>
 				<td>
@@ -50,7 +82,7 @@
 			</tr>
 			<tr>
 				<td>
-					<label class="border border-success p-2 mb-2">APELLIDO:</label>
+					<label class="btn btn-black">APELLIDO:</label>
 
 				</td>
 				<td>
@@ -59,7 +91,7 @@
 			</tr>
 			<tr>
 				<td>
-					<label class="border border-success p-2 mb-2">FECHA DE NACIMIENTO:</label>
+					<label class="btn btn-black">FECHA DE NACIMIENTO:</label>
 
 				</td>
 				<td>
@@ -68,7 +100,7 @@
 			</tr>
 			<tr>
 				<td>
-					<label class="border border-success p-2 mb-2"> GENERO:</label>
+					<label class="btn btn-black"> GENERO:</label>
 				</td>
 				<td>
 					<input class="border border-success p-2 mb-2 border-bottom border border-0 p-3 mb-2 bg-dark text-white"  type="text" id="genero" th:field="${cliente.genero}">
@@ -76,7 +108,7 @@
 			</tr>
 		</table>
 		<div style="text-align:center;">
-			<input class="btn btn-outline-primary" type="submit" value="GUARDAR">
+			<input class="btn btn-black" type="submit" value="GUARDAR">
 		</div>
 	</form>
 		<form th:action="@{/empleados/opciones}">
@@ -85,7 +117,7 @@
 			<p></p>
 			<p></p>
 			<p></p>
-			<input class="btn btn-outline-primary" type="submit" value="REGRESAR">
+			<input class="btn btn-red" type="submit" value="REGRESAR">
 		</div>
 
 
