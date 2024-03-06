@@ -17,7 +17,7 @@
 		body {
 			margin: 0;
 			padding: 0;
-			background-image: url('https://img.freepik.com/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_24972-1095.jpg?w=2000');
+			background-image: url('https://p4.wallpaperbetter.com/wallpaper/483/1008/958/background-cars-drawings-white-wallpaper-preview.jpg');
 			background-repeat: no-repeat;
 			background-size: cover;
 			/* Ajusta el tamaño de la imagen para cubrir todo el espacio */
@@ -27,10 +27,27 @@
 			padding: 25px;
 			height: 100vh;
 		}
+
+		.btn-red {
+			background-color: red;
+			color: white;
+			border-color: red;
+			border-radius: 0;
+			/* Eliminar el borde redondeado */
+			box-shadow: none;
+			/* Eliminar cualquier sombra */
+			outline: none;
+			/* Eliminar el contorno al hacer clic */
+		}
+
+		.btn-red:hover {
+			background-color: darkred;
+			border-color: darkred;
+		}
 	</style>
 
-	<div class="h4 pb-2 mb-4 text-danger border-bottom border-danger">
-		----------- Reserva Exitosa--------
+	<div style="color: black;">
+		Reserva Exitosa
 	</div>
 
 	<form th:action="@{/clientes/registrarReserva}">
@@ -53,5 +70,5 @@
 			</table>
 
 			<p></p>
-			<input class="border border-danger-subtle p-3 mb-2 bg-dark text-white" type="submit" value="REGRESAR">
+			<input class="btn btn-red" type="submit" value="REGRESAR">
 		</div>

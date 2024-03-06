@@ -34,14 +34,14 @@ public class EmpleadoController {
 	@Autowired
 	private IReservaService iReservaService;
 
-	// http://localhost:8080/renta/empleados/opciones
+	// http://localhost:8080/empleados/opciones
 	@GetMapping("/opciones")
 	public String vistaEmpleados() {
 		return "vistaEmpleados";
 	}
 
 	// insertarCliente desde Empleado
-	// http://localhost:8080/renta/empleados/registrarCliEmpleado
+	// http://localhost:8080/empleados/registrarCliEmpleado
 	@GetMapping("/registrarCliEmpleado")
 	public String vistaRegistrarCliente(Cliente cliente) {
 		return "vistaEmpleadoRegistrarCliente";

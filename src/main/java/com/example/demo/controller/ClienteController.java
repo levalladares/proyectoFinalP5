@@ -34,19 +34,19 @@ public class ClienteController {
 	@Autowired
 	private IReservaService reservaService;
 
-	// http://localhost:8080/renta/clientes/opciones
+	// http://localhost:8080/clientes/opciones
 	@GetMapping("/opciones")
 	public String vistaCliente() {
 		return "vistaCliente";
 	}
 
-	// http://localhost:8080/renta/clientes/registrarCli
+	// http://localhost:8080/clientes/registrarCli
 	@GetMapping("/registrarCli")
 	public String vistaRegistrarCliente(Cliente cliente) {
 		return "vistaRegistrarCliente";
 	}
 
-	// http://localhost:8080/renta/clientes/insertar
+	// http://localhost:8080/clientes/insertar
 	@PostMapping("/insertar")
 	public String insertarCliente(Cliente cliente) {
 		cliente.setRegistro("C");
@@ -64,14 +64,14 @@ public class ClienteController {
 		return "vistaBuscarVehiculoMarcayModelo";
 	}
 
-	// http://localhost:8080/renta/clientes/registrarReserva
+	// http://localhost:8080/clientes/registrarReserva
 	@GetMapping("/registrarReserva")
 	public String vistaInsertarReserva(Model model) {
 		model.addAttribute("reserva", new ReservaDto());
 		return "vistaRegistrarReserva";
 	}
 
-	// http://localhost:8080/renta/clientes/reservar
+	// http://localhost:8080/clientes/reservar
 	@PostMapping("/reservar")
 	public String insertarReserva(@ModelAttribute ReservaDto dto, RedirectAttributes attributes) {
 		String mensaje = this.reservaService.reservarRetorno(dto.getPlaca(), dto.getCedula(), dto.getInicio(),
@@ -87,7 +87,7 @@ public class ClienteController {
 
 	}
 
-	// http://localhost:8080/renta/clientes/reservaExitosa
+	// http://localhost:8080/clientes/reservaExitosa
 	@GetMapping("/reservaExitosa")
 	public String vistaReservaExitosa(Reserva reserva, Model model) {
 
